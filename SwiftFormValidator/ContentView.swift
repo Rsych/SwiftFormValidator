@@ -27,7 +27,7 @@ struct ContentView: View {
                         ButtonFormView(component: component as! ButtonFormComponent) { id in
                             switch id {
                             case .submit:
-                                // Validate
+                                contentBuilder.validate()
                                 break
                             default:
                                 break
@@ -41,6 +41,16 @@ struct ContentView: View {
             .padding(.top, 100)
         }  //: ScrollV
         .padding(.horizontal)
+        .onChange(of: contentBuilder.state) { state in
+            switch state {
+            case .valid(let user):
+                print("Form is valid with user: \(user)")
+            case .fail(let error):
+                print("Failed \(error.errorDescription)")
+            case .none:
+                break
+            }
+        }
     }
 }
 
