@@ -9,6 +9,7 @@ import Foundation
 
 protocol FormContentBuilder {
     var content: [FormComponent] { get }
+    func update(_ val: Any, in component: FormComponent)
 }
 
 final class FormContentBuilderImpl: ObservableObject, FormContentBuilder {
@@ -38,7 +39,7 @@ final class FormContentBuilderImpl: ObservableObject, FormContentBuilder {
                           validations: [
                             RegexValidationManagerImpl(
                                 [
-                                    RegexFormItem(pattern: RegexPatterns.emailChars, error: .custom(message: "Invalid Email")),
+                                    RegexFormItem(pattern: RegexPatterns.emailChars, error: .custom(message: "Invalid Email missing @")),
                                     RegexFormItem(pattern: RegexPatterns.higherThanSixChars, error: .custom(message: "less than 6 characters"))
                                 ])]),
         DateFormComponent(id: .dob, mode: .date,
@@ -47,4 +48,8 @@ final class FormContentBuilderImpl: ObservableObject, FormContentBuilder {
                           ]),
         ButtonFormComponent(id: .submit, title: "Confirm")
     ]
+    func update(_ val: Any, in component: FormComponent) {
+        guard let index = content.firstIndex(where: { $0.id == component.id}) else { return }
+        content[index].val = val
+    }
 }

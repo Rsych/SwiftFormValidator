@@ -14,6 +14,8 @@ struct TextFieldFormView: View {
     @State private var text = ""
     @State private var error: ValidationError?
     
+    @EnvironmentObject var contentBuilder: FormContentBuilderImpl
+    
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,6 +35,10 @@ struct TextFieldFormView: View {
                 .foregroundColor(.red)
         }  //: VStack
         .onChange(of: text) { newValue in
+            
+            // update text in formcomponent
+            contentBuilder.update(text, in: component)
+            
             // Perform val
             error = component
                 .validations
@@ -44,7 +50,8 @@ struct TextFieldFormView: View {
 
 struct TextFieldFormView_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldFormView(component: .init(id: .firstName, placeholder: "Text here"))
+        TextFieldFormView(component: .init(id: .firstName, placeholder: ""))
+            .environmentObject(FormContentBuilderImpl())
             .previewLayout(.sizeThatFits)
             .padding()
     }

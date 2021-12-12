@@ -19,10 +19,20 @@ struct ContentView: View {
                     switch component {
                     case is TextFormComponent:
                         TextFieldFormView(component: component as! TextFormComponent)
+                            .environmentObject(contentBuilder)
                     case is DateFormComponent:
                         DateFormView(component: component as! DateFormComponent)
+                            .environmentObject(contentBuilder)
                     case is ButtonFormComponent:
-                        ButtonFormView(component: component as! ButtonFormComponent)
+                        ButtonFormView(component: component as! ButtonFormComponent) { id in
+                            switch id {
+                            case .submit:
+                                // Validate
+                                break
+                            default:
+                                break
+                            }
+                        }
                     default:
                         EmptyView()
                     }
