@@ -15,6 +15,8 @@ import SwiftUI
 protocol FormItem {
     var id: UUID { get }
     var formId: FormField { get }
+    var validations: [ValidationManager] { get }
+    var val: Any? { get }
 }
 
 /**
@@ -40,47 +42,18 @@ enum FormField: String, CaseIterable {
 }
 
 /**
- * Component for a form section the form
- */
-
-final class FormSectionComponent: FormSectionItem, Hashable {
-
-    let id: UUID = UUID()
-    var items: [FormComponent]
-
-    required init(items: [FormComponent]) {
-        self.items = items
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-  
-    static func == (lhs: FormSectionComponent, rhs: FormSectionComponent) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
-/**
  * Component for a form items the form
  */
 
-class FormComponent: FormItem, Hashable, Identifiable {
-
+class FormComponent: FormItem, Identifiable {
+      
     let id = UUID()
     let formId: FormField
-    var value: Any?
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: FormComponent, rhs: FormComponent) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    init(_ id: FormField) {
+    var validations: [ValidationManager]
+    var val: Any?
+    init(_ id: FormField, validations: [ValidationManager] = []) {
         self.formId = id
+        self.validations = validations
     }
 }
 
@@ -95,10 +68,10 @@ final class TextFormComponent: FormComponent {
     
     init(id: FormField,
         placeholder: String,
-        keyboardType: UIKeyboardType = .default) {
+         keyboardType: UIKeyboardType = .default, validations: [ValidationManager] = []) {
         self.placeholder = placeholder
         self.keyboardType = keyboardType
-        super.init(id)
+        super.init(id, validations: validations)
     }
 }
 
@@ -111,9 +84,9 @@ final class DateFormComponent: FormComponent {
     let mode: DatePickerComponents
     
     init(id: FormField,
-         mode: DatePickerComponents) {
+         mode: DatePickerComponents, validations: [ValidationManager] = []) {
         self.mode = mode
-        super.init(id)
+        super.init(id, validations: validations)
     }
 }
 
