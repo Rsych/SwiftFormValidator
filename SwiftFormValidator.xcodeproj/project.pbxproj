@@ -14,6 +14,7 @@
 		71AFA7E32765AF77008D7CA5 /* TextFieldFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7E22765AF77008D7CA5 /* TextFieldFormView.swift */; };
 		71AFA7E52765B043008D7CA5 /* DateFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7E42765B043008D7CA5 /* DateFormView.swift */; };
 		71AFA7E72765B0AE008D7CA5 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7E62765B0AE008D7CA5 /* ButtonFormView.swift */; };
+		71AFA7EB2765B235008D7CA5 /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7EA2765B235008D7CA5 /* FormItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		71AFA7E22765AF77008D7CA5 /* TextFieldFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormView.swift; sourceTree = "<group>"; };
 		71AFA7E42765B043008D7CA5 /* DateFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormView.swift; sourceTree = "<group>"; };
 		71AFA7E62765B0AE008D7CA5 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
+		71AFA7EA2765B235008D7CA5 /* FormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,7 @@
 		71AFA7D22764F864008D7CA5 /* SwiftFormValidator */ = {
 			isa = PBXGroup;
 			children = (
-				71AFA7E12765AF67008D7CA5 /* Views */,
+				71AFA7E82765B219008D7CA5 /* Form */,
 				71AFA7D32764F864008D7CA5 /* SwiftFormValidatorApp.swift */,
 				71AFA7D52764F864008D7CA5 /* ContentView.swift */,
 				71AFA7D72764F864008D7CA5 /* Assets.xcassets */,
@@ -82,6 +84,23 @@
 				71AFA7E62765B0AE008D7CA5 /* ButtonFormView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		71AFA7E82765B219008D7CA5 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				71AFA7E92765B229008D7CA5 /* Model */,
+				71AFA7E12765AF67008D7CA5 /* Views */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		71AFA7E92765B229008D7CA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71AFA7EA2765B235008D7CA5 /* FormItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AFA7EB2765B235008D7CA5 /* FormItem.swift in Sources */,
 				71AFA7D62764F864008D7CA5 /* ContentView.swift in Sources */,
 				71AFA7E72765B0AE008D7CA5 /* ButtonFormView.swift in Sources */,
 				71AFA7E32765AF77008D7CA5 /* TextFieldFormView.swift in Sources */,
