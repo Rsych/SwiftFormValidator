@@ -17,6 +17,9 @@
 		71AFA7EB2765B235008D7CA5 /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7EA2765B235008D7CA5 /* FormItem.swift */; };
 		71AFA7F12765BD26008D7CA5 /* FormContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7F02765BD26008D7CA5 /* FormContentBuilder.swift */; };
 		71AFA7F52765C213008D7CA5 /* RegexPatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7F42765C213008D7CA5 /* RegexPatters.swift */; };
+		71AFA7F82765C2C6008D7CA5 /* RegexFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7F72765C2C6008D7CA5 /* RegexFormItem.swift */; };
+		71AFA7FB2765C2DF008D7CA5 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7FA2765C2DF008D7CA5 /* ValidationError.swift */; };
+		71AFA7FE2765C352008D7CA5 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7FD2765C352008D7CA5 /* ValidationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		71AFA7EA2765B235008D7CA5 /* FormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
 		71AFA7F02765BD26008D7CA5 /* FormContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormContentBuilder.swift; sourceTree = "<group>"; };
 		71AFA7F42765C213008D7CA5 /* RegexPatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPatters.swift; sourceTree = "<group>"; };
+		71AFA7F72765C2C6008D7CA5 /* RegexFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexFormItem.swift; sourceTree = "<group>"; };
+		71AFA7FA2765C2DF008D7CA5 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		71AFA7FD2765C352008D7CA5 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,9 @@
 		71AFA7F22765C1FE008D7CA5 /* Regex */ = {
 			isa = PBXGroup;
 			children = (
+				71AFA7FC2765C33A008D7CA5 /* Manager */,
+				71AFA7F92765C2D8008D7CA5 /* Error */,
+				71AFA7F62765C2B9008D7CA5 /* Model */,
 				71AFA7F32765C207008D7CA5 /* Patterns */,
 			);
 			path = Regex;
@@ -131,6 +140,30 @@
 				71AFA7F42765C213008D7CA5 /* RegexPatters.swift */,
 			);
 			path = Patterns;
+			sourceTree = "<group>";
+		};
+		71AFA7F62765C2B9008D7CA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71AFA7F72765C2C6008D7CA5 /* RegexFormItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71AFA7F92765C2D8008D7CA5 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				71AFA7FA2765C2DF008D7CA5 /* ValidationError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		71AFA7FC2765C33A008D7CA5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				71AFA7FD2765C352008D7CA5 /* ValidationManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,12 +236,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AFA7FE2765C352008D7CA5 /* ValidationManager.swift in Sources */,
 				71AFA7EB2765B235008D7CA5 /* FormItem.swift in Sources */,
+				71AFA7FB2765C2DF008D7CA5 /* ValidationError.swift in Sources */,
 				71AFA7D62764F864008D7CA5 /* ContentView.swift in Sources */,
 				71AFA7E72765B0AE008D7CA5 /* ButtonFormView.swift in Sources */,
 				71AFA7F52765C213008D7CA5 /* RegexPatters.swift in Sources */,
 				71AFA7E32765AF77008D7CA5 /* TextFieldFormView.swift in Sources */,
 				71AFA7F12765BD26008D7CA5 /* FormContentBuilder.swift in Sources */,
+				71AFA7F82765C2C6008D7CA5 /* RegexFormItem.swift in Sources */,
 				71AFA7E52765B043008D7CA5 /* DateFormView.swift in Sources */,
 				71AFA7D42764F864008D7CA5 /* SwiftFormValidatorApp.swift in Sources */,
 			);
