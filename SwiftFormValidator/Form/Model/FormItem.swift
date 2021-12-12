@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 /**
  * Implementation for a form item
@@ -64,7 +65,7 @@ final class FormSectionComponent: FormSectionItem, Hashable {
  * Component for a form items the form
  */
 
-class FormComponent: FormItem, Hashable {
+class FormComponent: FormItem, Hashable, Identifiable {
 
     let id = UUID()
     let formId: FormField
@@ -107,10 +108,10 @@ final class TextFormComponent: FormComponent {
 
 final class DateFormComponent: FormComponent {
 
-    let mode: UIDatePicker.Mode
+    let mode: DatePickerComponents
     
     init(id: FormField,
-         mode: UIDatePicker.Mode) {
+         mode: DatePickerComponents) {
         self.mode = mode
         super.init(id)
     }

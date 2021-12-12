@@ -12,7 +12,7 @@ protocol FormContentBuilder {
 }
 
 final class FormContentBuilderImpl: ObservableObject, FormContentBuilder {
-    
+    // easily expand later by adding components
     private(set) var content: [FormComponent] = [
         TextFormComponent(id: .firstName, placeholder: "First Name"),
         TextFormComponent(id: .lastName, placeholder: "Last Name"),
