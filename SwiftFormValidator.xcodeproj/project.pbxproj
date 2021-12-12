@@ -16,6 +16,7 @@
 		71AFA7E72765B0AE008D7CA5 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7E62765B0AE008D7CA5 /* ButtonFormView.swift */; };
 		71AFA7EB2765B235008D7CA5 /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7EA2765B235008D7CA5 /* FormItem.swift */; };
 		71AFA7F12765BD26008D7CA5 /* FormContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7F02765BD26008D7CA5 /* FormContentBuilder.swift */; };
+		71AFA7F52765C213008D7CA5 /* RegexPatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA7F42765C213008D7CA5 /* RegexPatters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		71AFA7E62765B0AE008D7CA5 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		71AFA7EA2765B235008D7CA5 /* FormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
 		71AFA7F02765BD26008D7CA5 /* FormContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormContentBuilder.swift; sourceTree = "<group>"; };
+		71AFA7F42765C213008D7CA5 /* RegexPatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		71AFA7E82765B219008D7CA5 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				71AFA7F22765C1FE008D7CA5 /* Regex */,
 				71AFA7EF2765BD1D008D7CA5 /* Builder */,
 				71AFA7E92765B229008D7CA5 /* Model */,
 				71AFA7E12765AF67008D7CA5 /* Views */,
@@ -112,6 +115,22 @@
 				71AFA7F02765BD26008D7CA5 /* FormContentBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		71AFA7F22765C1FE008D7CA5 /* Regex */ = {
+			isa = PBXGroup;
+			children = (
+				71AFA7F32765C207008D7CA5 /* Patterns */,
+			);
+			path = Regex;
+			sourceTree = "<group>";
+		};
+		71AFA7F32765C207008D7CA5 /* Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				71AFA7F42765C213008D7CA5 /* RegexPatters.swift */,
+			);
+			path = Patterns;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +206,7 @@
 				71AFA7EB2765B235008D7CA5 /* FormItem.swift in Sources */,
 				71AFA7D62764F864008D7CA5 /* ContentView.swift in Sources */,
 				71AFA7E72765B0AE008D7CA5 /* ButtonFormView.swift in Sources */,
+				71AFA7F52765C213008D7CA5 /* RegexPatters.swift in Sources */,
 				71AFA7E32765AF77008D7CA5 /* TextFieldFormView.swift in Sources */,
 				71AFA7F12765BD26008D7CA5 /* FormContentBuilder.swift in Sources */,
 				71AFA7E52765B043008D7CA5 /* DateFormView.swift in Sources */,
