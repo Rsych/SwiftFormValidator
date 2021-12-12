@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Properties
+    
+    
+    // MARK: - Body
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.flexible(minimum: 44))], spacing: 20) {
+                TextFieldFormView()
+                TextFieldFormView()
+            }
+        }
     }
 }
 
